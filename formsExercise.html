@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Exercise</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Customer Experience Survey</legend>
+        <label for="storeNumber">Store Number</label>
+        <select name="sN" id="storeNumber">
+            <option value="storeNumber"hidden>Select A Store</option>
+            <option value="storeNumber">3109</option>
+            <option value="storeNumber">2421</option>
+            <option value="storeNumber">5357</option>
+        </select>
+    <fieldset>
+        <legend>When You Visited:</legend>
+        <label for="dateVisited">Date Visited</label>
+        <input type="date" id="dateVisited" value="mm/dd/yyyy">
+        <br>
+        <label for="time">Time</label>
+            <input type="time">
+    </fieldset> 
+    <label for="name">Full Name:</label>
+    <input type="name" id="fullName" required placeholder="Name" value=""/>
+    <br>
+    <label for="email">Email</label>
+    <input type="email" id="userEmail" required placeholder="Email" required />
+    <fieldset>
+        <legend>How would you rate your level of satisfaction with your visit</legend>
+        <input type="radio" id="satisfied" name="radioLink" />
+        <label for="satisfied">Satisfied</label>
+        <br>
+        <input type="radio" id="neutral" name="radioLink" />
+        <label for="neutral">Neither Satisfied nor Dissatisfied</label>
+        <br>
+        <input type="radio" id="dissatisfied" name="radioLink" />
+        <label for="dissatisfied">Dissatisfied</label>
+    </fieldset>
+    <label for="experience">Tell us about your experience:</label>
+    <br>
+    <textarea name="experience" id="experience" cols="20" rows="2"></textarea>
+    <br>
+    <label for="amount">Times visited in the last month:</label>
+    <br>
+    <input type="number" min="1" max="30">
+    <br>
+    <input type="checkbox" id="agree" />
+    <label for="agree">Please check the box if you would be willing to be contacted about your experience </label>
+    <label for="password">Password</label>
+    <input type="password" id="pass" name="password"
+    minlength="5" maxlength="10" required/>
+    <br>
+    <input type="reset">
+    <input type="submit" />
+    </fieldset>
+    </fieldset>
+</body>
+</html>
