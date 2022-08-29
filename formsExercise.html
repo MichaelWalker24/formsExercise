@@ -4,41 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms Exercise</title>
+    <title>Survey</title>
 </head>
 <body>
-    <fieldset>
-        <legend>Customer Experience Survey</legend>
-        <label for="storeNumber">Store Number</label>
-        <select name="sN" id="storeNumber">
+    <form>
+        <fieldset>
+            <legend>Customer Experience Survey</legend>
+            <label for="storeNumber">Store Number</label>
+            <select name="sN" id="storeNumber">
             <option value="storeNumber"hidden>Select A Store</option>
-            <option value="storeNumber">3109</option>
-            <option value="storeNumber">2421</option>
-            <option value="storeNumber">5357</option>
-        </select>
-    <fieldset>
+            <option value="3109">3109</option>
+            <option value="2421">2421</option>
+            <option value="5357">5357</option>
+            </select>
+        <fieldset>
         <legend>When You Visited:</legend>
+        <div>
         <label for="dateVisited">Date Visited</label>
-        <input type="date" id="dateVisited" value="mm/dd/yyyy">
-        <br>
-        <label for="time">Time</label>
-            <input type="time">
+        <!-- Bonus 2 -->
+        <!-- Adding min and max limits the date selection -->
+        <input type="date" name="date" id="dateVisited" max="2022-12-31" min="2022-01-01"
+        </div>
+        <!-- <br> -->
+        <div>
+        <label for="timeVisited">Time</label>
+            <input type="time" name="timeVisited" id="timeVisited">
+        </div>
     </fieldset> 
-    <label for="name">Full Name:</label>
-    <input type="name" id="fullName" required placeholder="Name" value=""/>
+    <label for="fullName">Full Name:</label>
+    <input type="text" name="fullName" id="fullName" required placeholder="Name" />
     <br>
-    <label for="email">Email</label>
-    <input type="email" id="userEmail" required placeholder="Email" required />
+    <label for="userEmail">Email</label>
+    <input type="email" name="userEmail" id="userEmail" required placeholder="Email" required />
     <fieldset>
-        <legend>How would you rate your level of satisfaction with your visit</legend>
+        <legend>How would you rate your level of satisfaction with your visit:</legend>
+        <div>
         <input type="radio" id="satisfied" name="radioLink" />
         <label for="satisfied">Satisfied</label>
-        <br>
-        <input type="radio" id="neutral" name="radioLink" />
+        </div>
+        <div>
+            <!-- Bonus 3 -->
+            <!-- Adding checked will cause the radio input to be selected when the page is reloaded -->
+        <input type="radio" id="neutral" name="radioLink" checked />
         <label for="neutral">Neither Satisfied nor Dissatisfied</label>
-        <br>
+        </div>
+        <div>
         <input type="radio" id="dissatisfied" name="radioLink" />
         <label for="dissatisfied">Dissatisfied</label>
+        </div>
     </fieldset>
     <label for="experience">Tell us about your experience:</label>
     <br>
@@ -46,17 +59,23 @@
     <br>
     <label for="amount">Times visited in the last month:</label>
     <br>
-    <input type="number" min="1" max="30">
+    <!-- Bonus 4 -->
+    <!-- Adding min and max will limit the number selection to a specific range -->
+    <input type="number" name="amount" id="amount" min="1" max="30">
     <br>
-    <input type="checkbox" id="agree" />
+    <!-- Bonus 5 -->
+    <!-- Adding required will not allow the user to submit the form without completing the checkbox. -->
+    <input type="checkbox" name="agree" id="agree" required />
     <label for="agree">Please check the box if you would be willing to be contacted about your experience </label>
-    <label for="password">Password</label>
-    <input type="password" id="pass" name="password"
-    minlength="5" maxlength="10" required/>
+    <!-- Bonus 6 -->
+    <!-- pattern=".{}" makes the password limited to the number lengths required -->
+    <label for="pass">Password</label>
+    <input type="password" id="pass" name="password" pattern=".{5,10}" title="Please enter a password between 5-10 characters in length" />
     <br>
     <input type="reset">
     <input type="submit" />
     </fieldset>
     </fieldset>
+    </form>
 </body>
 </html>
